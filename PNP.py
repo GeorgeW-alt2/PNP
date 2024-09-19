@@ -16,10 +16,10 @@ def generate_large_distance_matrix(size):
     return matrix
 
 # Generate a 20x20 distance matrix
-distance_matrix = generate_large_distance_matrix(8)
+distance_matrix = generate_large_distance_matrix(20)
 
 # City identifiers for 20 cities
-cities = list(range(8))
+cities = list(range(10))
 
 def calculate_route_distance(route):
     """Calculate the total distance of the given route."""
@@ -64,3 +64,4 @@ if __name__ == '__main__':
             best_route = route
 
     print(f"Best route: {best_route}, Distance: {best_distance}")
+    input()
