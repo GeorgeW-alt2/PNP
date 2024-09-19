@@ -2,24 +2,27 @@ import itertools
 import multiprocessing
 import random
 
-# Function to generate a larger distance matrix
-def generate_large_distance_matrix(size):
+# Function to generate a symmetric distance matrix for TSP
+def generate_symmetric_distance_matrix(size):
     matrix = []
     for i in range(size):
         row = []
         for j in range(size):
             if i == j:
                 row.append(0)  # Distance to self is 0
+            elif i < j:
+                dist = random.randint(1, 100)  # Random distance between 1 and 100
+                row.append(dist)
             else:
-                row.append(random.randint(1, size))  # Random distance between 1 and 20
+                row.append(matrix[j][i])  # Ensure symmetry
         matrix.append(row)
     return matrix
 
-# Generate a 20x20 distance matrix
-distance_matrix = generate_large_distance_matrix(20)
+# Generate a 20x20 symmetric distance matrix
+distance_matrix = generate_symmetric_distance_matrix(20)
 
 # City identifiers for 20 cities
-cities = list(range(10))
+cities = list(range(20))
 
 def calculate_route_distance(route):
     """Calculate the total distance of the given route."""
