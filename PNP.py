@@ -22,7 +22,7 @@ def generate_symmetric_distance_matrix(size):
 distance_matrix = generate_symmetric_distance_matrix(20)
 
 # City identifiers for 20 cities
-cities = list(range(20))
+cities = list(range(10))
 
 def calculate_route_distance(route):
     """Calculate the total distance of the given route."""
